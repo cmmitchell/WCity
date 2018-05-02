@@ -63,3 +63,26 @@ function CityStyle(feature) {
    
    };
 }
+
+function getColor(d) {
+	return d > 125  ? '#006739' :
+			   d > 90 ? '#238b45' :
+				d > 50   ? '#2f9a52' :
+				d > 30   ? '#41ab5d' :
+				d > 14   ? '#67b469' :
+				d > 0   ? '#8cbf86' :
+						'#a1d99b';
+
+}
+
+
+function citymi(feature) {
+    return {
+        fillColor: getColor(feature.properties.SqMi),
+        weight: 2,
+        opacity: 1,
+        color: "#696969", weight: .7,
+        dashArray: '3',
+        fillOpacity: 0.6
+    };
+}
