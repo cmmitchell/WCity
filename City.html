@@ -187,6 +187,49 @@
 				);
 				measureControl.addTo(map);
 				
+				function getColor(d) {
+					    return d > 125  ? '#006739' :
+						   d > 90 ? '#238b45' :
+						   d > 50   ? '#2f9a52' :
+						   d > 30   ? '#41ab5d' :
+						   d > 14   ? '#67b469' :
+							   d > 0   ? '#8cbf86' :
+							      '#a1d99b';
+										  //
+										  //#c7e9c0
+					}
+				
+				var legend = L.control({position: 'bottomright'});
+				legend.onAdd = function (map) {
+					var div = L.DomUtil.create('div', 'info legend'),
+						grades = [0, 14, 30, 50, 90, 125],
+						labels = [],
+						from, to;
+					for (var i = 0; i < grades.length; i++) {
+						div.innerHTML +=
+						    '<span style="background:' + getColor(grades[i] + 1) + '"></span> ';
+					    }
+					    // a line break
+					    div.innerHTML += '<br>';
+					    // second loop for text
+					    for (var i = 0; i < grades.length; i++) {
+						div.innerHTML +=
+						    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
+					    }
+					    return div;
+					};
+				
+				map.on('overlayadd', function(eventLayer){
+				    if (eventLayer.name === 'Mi²'){
+					map.addControl(legend);
+				    } 
+				});
+				map.on('overlayremove', function(eventLayer){
+				    if (eventLayer.name === 'Mi²'){
+					 map.removeControl(legend);
+				    } 
+				});
+				
 				L.control.scale({maxWidth: 150}).addTo(map);
 				L.control.fullscreen().addTo(map);
 
