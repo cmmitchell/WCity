@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [Acheck] </title>
+		<title>City [Bcheck] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -145,10 +145,10 @@
 	//this is a seperating line ----------------------------------------------------------------------------------
 				//set map extent, view, and default layer
 				var map = L.map('map', {
-					layers: [aShp],
+					layers: [a1Shp, bShp],
 					zoomDelta: 0.15,
 					zoomSnap: 0
-					}).setView([39.007335, -76.920607], 4.5);
+					}).setView([39.007335, -76.920607], 7.5);
 					
        				//	}).setView([7.1328, -3.6559], 9.5);	
 				//	}).setView([-0.9530146, 32.930699], 6.5);
