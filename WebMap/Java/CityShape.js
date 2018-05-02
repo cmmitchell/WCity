@@ -53,8 +53,8 @@ var cityS =
 
 function CityStyle(feature) {
    return {
-   fillColor: '#7d987f', 
-   weight: 2,
+   fillColor: '#9a9a9a', 
+   weight: 1,
    fillOpacity: 1,
    color: '#747474', weight: 1.5,
    dashArray: '3',
