@@ -53,12 +53,12 @@ var cityS =
 
 function CityStyle(feature) {
    return {
-   fillColor: '#6ba1b6',
+   fillColor: '#7d987f',
    weight: 2,
-   fillOpacity: .8,
-   color: '#0099FF',
-   dashArray: '2',
-   weight: .5,
+   fillOpacity: .7,
+   color: '#747474', weight: .8,
+   dashArray: '3',
+   
    opacity: .6,
    
    };
