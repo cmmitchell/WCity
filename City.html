@@ -76,24 +76,18 @@
 			//============================================	
 			//=================Background=================
 			//============================================
-			
-			
-			
+					
 				var a = L.geoJson(bak, {
 					style: back})
 					a1 = L.geoJson(bak, {
 					style: backblack})
 				
 
-					
-				
 
-				
 				//========================================
 				//========== Grats =======================
 				//========================================
-				
-					
+
 				
 					k = L.geoJson(grat, {
 					style: gratst,
@@ -123,8 +117,7 @@
 				//===================================================
 				//assigning variables to layers for control
 				//===================================================
-				
-					//=================background=================
+
 				var aShp = L.layerGroup([a]),
 					a1Shp = L.layerGroup([a1]),
 
@@ -181,104 +174,9 @@
 				);
 				measureControl.addTo(map);
 				
-					function getColor(d) {
-					    return d > 380000  ? '#006739' :
-						   d > 210000 ? '#238b45' :
-						   d > 150000   ? '#2f9a52' :
-						   d > 80000   ? '#41ab5d' :
-						   d > 25000   ? '#67b469' :
-							   d > 0   ? '#8cbf86' :
-							      '#a1d99b';
-										  //
-										  //#c7e9c0
-					}
-				
-					function getColorq(q) {
-					    return q > 1500000  ? '#006739' :
-						   q > 800000 ? '#238b45' :
-						   q > 465000   ? '#2f9a52' :
-						   q > 250000   ? '#41ab5d' :
-						   q > 90000   ? '#67b469' :
-							   q > 0   ? '#8cbf86' :
-							      '#a1d99b';
-										  //
-										  //#c7e9c0
-					}
-
-
-				var legend = L.control({position: 'bottomright'});
-				legend.onAdd = function (map) {
-					var div = L.DomUtil.create('div', 'info legend'),
-						grades = [0, 35000, 100000, 180000, 250000, 380000],
-						labels = [],
-						from, to;
-					for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<span style="background:' + getColor(grades[i] + 1) + '"></span> ';
-					    }
-					    // a line break
-					    div.innerHTML += '<br>';
-					    // second loop for text
-					    for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
-					    }
-					    return div;
-					};
-		//this is a seperating line ----------------------------------------------------------------------------------
-				var legendkm = L.control({position: 'bottomright'});
-				legendkm.onAdd = function (map) {
-					var div = L.DomUtil.create('div', 'info legend'),
-						grades = [0, 90000, 250000, 465000, 800000, 1500000],
-						labels = [];
-					for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<span style="background:' + getColorq(grades[i] + 1) + '"></span> ';
-					    }
-					    // a line break
-					    div.innerHTML += '<br>';
-					    // second loop for text
-					    for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
-					    }
-					    return div;
-					};
-				
-				map.on('overlayadd', function(eventLayer){
-				    if (eventLayer.name === 'Countries (Km²)'){
-					map.addControl(legendkm);
-				    } 
-				});
-
-				map.on('overlayremove', function(eventLayer){
-				    if (eventLayer.name === 'Countries (Km²)'){
-					 map.removeControl(legendkm);
-				    } 
-				});
-				
-				map.on('overlayadd', function(eventLayer){
-				    if (eventLayer.name === 'Countries (Mi²)'){
-					map.addControl(legend);
-				    } 
-				});
-
-				map.on('overlayremove', function(eventLayer){
-				    if (eventLayer.name === 'Countries (Mi²)'){
-					 map.removeControl(legend);
-				    } 
-				});
-				
 				L.control.scale({maxWidth: 150}).addTo(map);
 				L.control.fullscreen().addTo(map);
-				//var poi1 = L.point(100, -180),
-				//poi2 = L.point(-100, 180)
-				    
-				//L.bounds(poi1, poi2);		
-				
-				//L.map('map', {
-        			
-    				//});
+
 				
 
 			
