@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [Bcheck] </title>
+		<title>City [VVcheck] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -27,6 +27,7 @@
 		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Graticule_5.js"></script>
 		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Graticule_1.js"></script>
 		<script type="text/javascript" src="https://cmmitchell.github.io/WCity/WebMap/Java/CityShape.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/WCity/WebMap/Java/CityShape2.js"></script>
 
 		<!-- Broken Stuff -->
 		
@@ -91,6 +92,15 @@
 						}
 					})
 				
+					c = L.geoJson(city2, {
+					fillColor: "getColors", weight: 25, fillOpacity: .8, color: "#696969", dashArray: '2', 
+						weight: 1, opacity: 1,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Mi²:</b> " + feature.properties.SqMi,popupOptions);
+					
+						}
+					})
+				
 					bsm = L.geoJson(cityS, {
 					style: citymi
 					})
@@ -139,6 +149,7 @@
 				    	k5Shp = L.layerGroup([k5]),
 				    
 				    	bShp = L.layerGroup([b]),
+				    	cShp = L.layerGroup([c]),
 					bsmShp = L.layerGroup([bsm]);
 
 				//background images
@@ -174,6 +185,7 @@
 					"Graticules 1":k1Shp,
 					
 					"City":bShp,
+					"City2":cShp,
 					"Mi²":bsmShp,
 					
 				};
