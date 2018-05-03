@@ -103,7 +103,7 @@ function getColors(d) {
 
 function csty(feature){
 	return {
-		fillColor: getColor(feature.properties.Own),
+		fillColor: getColors(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
 		color: "#696969", dashArray: '2', weight: 1, opacity: 1
 			}
