@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [QBWcheck] </title>
+		<title>City [HHcheck] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -243,12 +243,12 @@
 					    labels = ['<strong>Categories</strong>'],
 					    categories = ['FRN', 'b1', 'b2', 'C1', 'C2', 'C3', 'C4', 'C5', 'a1', 'a2', 'a3', 'a4'],
 					    title = "Controlled Territories";
-					
 						for (var i = 0; i < categories.length; i++) {
-							div.innerHTML +=
-							    '<span style="background:' + getColors(categories[i] + 1) + '"></span> '
-							'<label>' + (categories[i] ? categories[i] : '+')); + '</label>';
-						    }
+						    div.innerHTML += 
+						    labels.push(
+							'<span style="background:' + getColors(categories[i] + 1) + '"></span> ' +
+							(categories[i] ? categories[i] : '+'));
+						}
 					
 					    return div;
 					};
