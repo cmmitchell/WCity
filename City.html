@@ -216,11 +216,12 @@
 										  //#c7e9c0
 					}
 				//===============================================
-				var legend = L.control({position: 'bottomright', title = "Square Miles"});
+				var legend = L.control({position: 'bottomright'});
 				legend.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend'),
 						grades = [0, 14, 30, 50, 90, 125],
 						labels = [],
+					    	title = "Square Miles",
 						from, to;
 					for (var i = 0; i < grades.length; i++) {
 						div.innerHTML +=
@@ -236,11 +237,12 @@
 					    return div;
 					};
 				//===============================================
-				var legend2 = L.control({position: 'bottomright', title = "Controlled Territories"});
+				var legend2 = L.control({position: 'bottomright'});
 				legend2.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend');
 					    labels = ['<strong>Categories</strong>'],
-					    categories = [d,'a', 'b', 'c', 'd'];
+					    categories = [d,'a', 'b', 'c', 'd'],
+					    title = "Controlled Territories";
 					
 						for (var i = 0; i < categories.length; i++) {
 							div.innerHTML +=
