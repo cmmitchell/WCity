@@ -225,11 +225,20 @@
 						from, to;
 
 					    for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
-					    }
-					    return div;
-					};
+							div.innerHTML +=
+							    '<span style="background:' + getColor(grades[i] + 1) + '"></span> ';
+						    }
+
+						    // a line break
+						    div.innerHTML += '<br>';
+
+						    // second loop for text
+						    for (var i = 0; i < grades.length; i++) {
+							div.innerHTML +=
+							    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
+						    }
+						    return div;
+						};
 				//===============================================
 				var legend2 = L.control({position: 'bottomright'});
 				legend2.onAdd = function (map) {
