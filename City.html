@@ -215,7 +215,7 @@
 										  //
 										  //#c7e9c0
 					}
-				
+				//===============================================
 				var legend = L.control({position: 'bottomright'});
 				legend.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend'),
@@ -235,14 +235,14 @@
 					    }
 					    return div;
 					};
-				
+				//===============================================
 				var legend2 = L.control({position: 'bottomright'});
 				legend2.onAdd = function (map) {
 					var div = L.DomUtil.create('div', 'info legend');
 					    labels = ['<strong>Categories</strong>'],
 					    categories = ['a','b','c','d','e'];
 					
-						for (var i = 0; i < grades.length; i++) {
+						for (var i = 0; i < categories.length; i++) {
 							div.innerHTML +=
 							    '<span style="background:' + getColors(categories[i] + 1) + '"></span> ';
 						    }
@@ -258,7 +258,7 @@
 						    }
 						    return div;
 					};
-				
+				//===============================================
 				map.on('overlayadd', function(eventLayer){
 				    if (eventLayer.name === 'Mi²'){
 					map.addControl(legend);
