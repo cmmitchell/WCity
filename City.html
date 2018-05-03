@@ -238,22 +238,21 @@
 				
 				var legend2 = L.control({position: 'bottomright'});
 				legend2.onAdd = function (map) {
-					var div = L.DomUtil.create('div', 'info legend'),
-						grades = [],
-						labels = [],
-						from, to;
-					for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<span style="background:' + getColors(grades[i] + 1) + '"></span> ';
-					    }
-					    // a line break
-					    div.innerHTML += '<br>';
-					    // second loop for text
-					    for (var i = 0; i < grades.length; i++) {
-						div.innerHTML +=
-						    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
-					    }
+					var div = L.DomUtil.create('div', 'info legend');
+					    labels = ['<strong>Categories</strong>'],
+					    categories = ['a','b','c','d','e'];
+
+					    for (var i = 0; i < categories.length; i++) {
+						    div.innerHTML += 
+						    labels.push(
+							'<i style="background:' + getColors(categories[i] + 1) + '"></i> ' +
+							(categories[i] ? categories[i] : '+'));
+						}
+
+						div.innerHTML = labels.join('<br>');
 					    return div;
+					
+					
 					};
 				
 				map.on('overlayadd', function(eventLayer){
