@@ -245,9 +245,8 @@
 					    title = "Controlled Territories";
 						for (var i = 0; i < categories.length; i++) {
 						    div.innerHTML += 
-						    labels.push(
 							'<span style="background:' + getColors(categories[i] + 1) + '"></span> ' +
-							(categories[i] ? categories[i] : '+'));
+							categories[i] ? categories[i] : '+';
 						}
 					
 					    return div;
