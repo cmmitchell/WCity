@@ -102,7 +102,12 @@ function getColors(d) {
     }
 
 function csty(feature){
-		switch (feature.properties.Own) {
-			default: return {fillColor: "getColors", weight: 25, fillOpacity: .8, color: "#696969", dashArray: '2', weight: 1, opacity: 1};
+	return {
+		fillColor: getColor(feature.properties.Own),
+		weight: 25, fillOpacity: .8,
+		color: "#696969", dashArray: '2', weight: 1, opacity: 1;
 			}
 		};
+
+
+}
