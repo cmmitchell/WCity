@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [VVcheck] </title>
+		<title>City [Bcheck] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -93,8 +93,7 @@
 					})
 				
 					c = L.geoJson(city2, {
-					fillColor: "getColors", weight: 25, fillOpacity: .8, color: "#696969", dashArray: '2', 
-						weight: 1, opacity: 1,
+					style: csty,
 					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
 					layer.bindPopup("<b>Mi²:</b> " + feature.properties.SqMi,popupOptions);
 					
