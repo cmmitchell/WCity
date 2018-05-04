@@ -130,7 +130,7 @@ function gcolor(f) {
 				"#a3a3a3";
 }
 
-function csty(feature){
+function csty2(feature){
 	return {
 		fillColor: gcolor(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
