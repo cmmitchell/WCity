@@ -112,7 +112,7 @@ function getColor(a) {
 
 }
 
-function getC(d) {
+function getColors(d) {
 	//Alliance 1:
 	//federal northern republic (Blue) #4292c6 #6baed6 #9ecae1 #c6dbef #deebf7
         return d === 'FRN'  ? "#08306b" :
@@ -160,6 +160,8 @@ function getC(d) {
 			   d === 'g1' ? "#252525" :
 			   d === 'g2' ? "#525252" :
 			   //others???? orange/red#9f3000
+			   d === 'g2' ? "#9f3000" :
+			   
 			   //thityir
 			   d === 'P1' ? "#9db7db" :
 			   d === 'P2' ? "#9dd3db" :
@@ -171,11 +173,21 @@ function getC(d) {
 			   d === 'P8' ? "#c9be99" :
 			   d === 'P9' ? "#5e727c" :
 			   d === 'CU' ? "#436db4" :
+
                             "#a3a3a3";
     }
+
+function csty(feature){
+	return {
+		fillColor: getColors(feature.properties.Own),
+		weight: 25, fillOpacity: .8,
+		color: "#696969", dashArray: '2', weight: 1, opacity: 1
+			}
+		}
+
 function citymi(feature) {
     return {
-        fillColor: getColor(feature.properties.SqMi),
+        fillColor: getColor(feature.properties.SqMiShort),
         weight: 2,
         opacity: 1,
         color: "#696969", weight: .7,
@@ -184,13 +196,7 @@ function citymi(feature) {
     };
 }
 
-function csty(feature){
-	return {
-		fillColor: getC(feature.properties.Own),
-		weight: 25, fillOpacity: .8,
-		color: "#696969", dashArray: '2', weight: 1, opacity: 1
-			}
-		}
+
 function CityStyle(feature) {
    return {
    fillColor: '#9a9a9a', 
