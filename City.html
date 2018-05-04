@@ -258,23 +258,14 @@
 						};
 				//===============================================
 				var legend2 = L.control({position: 'bottomright'});
-				legend2.onAdd = function (map) {
-			
-				var div = L.DomUtil.create('div', 'info legend');
-				 
-				    color = ['#bcbddc', '#74c476', '#6baed6', '#436db4', '#9db7db',
+				legend2.onAdd = {
+					color = ['#bcbddc', '#74c476', '#6baed6', '#436db4', '#9db7db',
 					     '#9dd3db', '#99c9be', '#99c9ad', '#9fc999', '#b1c999', 
 					     '#c2c999', '#c9be99', '#5e727c'],
-				    labels = ['<strong>Categories</strong>'],
-				    categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6'
+					labels = ['<strong>Categories</strong>'],
+					categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6'
 						 , 'P7', 'P8', 'P9'];
-				for (var i = 0; i < categories.length; i++) {
-					div.innerHTML +=
-					    '<span style="background:' + lcol(categories[i] + 1) + '"></span> ';
 				}
-
-				return div;
-				};
 				
 
 				//===============================================
