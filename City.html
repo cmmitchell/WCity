@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [RTZ] </title>
+		<title>City [RTFF] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -217,19 +217,18 @@
 					}
 				function lcol(f) {
 					return f === 'NCA' ? "#6baed6" :
-							   f === 'aa' ? "#bcbddc" :			   
-							   f === 'CA' ? "#74c476" :	
-							   f === 'P1' ? "#9db7db" :
-							   f === 'P2' ? "#9dd3db" :
-							   f === 'P3' ? "#99c9be" :
-							   f === 'P4' ? "#99c9ad" :
-							   f === 'P5' ? "#9fc999" :
-							   f === 'P6' ? "#b1c999" :
-							   f === 'P7' ? "#c2c999" :
-							   f === 'P8' ? "#c9be99" :
-							   f === 'P9' ? "#5e727c" :
-							   f === 'CU' ? "#436db4" :
-
+						f === 'aa' ? "#bcbddc" :			   
+						f === 'CA' ? "#74c476" :	
+						f === 'P1' ? "#9db7db" :
+						f === 'P2' ? "#9dd3db" :
+						f === 'P3' ? "#99c9be" :
+						f === 'P4' ? "#99c9ad" :
+						f === 'P5' ? "#9fc999" :
+						f === 'P6' ? "#b1c999" :
+						f === 'P7' ? "#c2c999" :
+						f === 'P8' ? "#c9be99" :
+						f === 'P9' ? "#5e727c" :
+						f === 'CU' ? "#436db4" :
 							    "#a3a3a3";
 				    }
 				//===============================================
@@ -268,7 +267,7 @@
 					for (var i = 0; i < categories.length; i++) {
 					    div.innerHTML += 
 					    labels.push(
-						'<i style="background:' + lcol(categories[i] + 1) + '"></i> ' );
+						'<span style="background:' + lcol(categories[i] + 1) + '"></span> ' );
 					}
 					
 
