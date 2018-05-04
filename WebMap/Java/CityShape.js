@@ -113,20 +113,20 @@ function getColor(a) {
 }
 
 function gcolor(f) {
-		return f === 'NCA' ? '#6baed6' :
-			f === 'aa' ? '#bcbddc' :			   
-			f === 'CA' ? '#74c476' :	
-			f === 'P1' ? '#9db7db' :
-			f === 'P2' ? '#9dd3db' :
-			f === 'P3' ? '#99c9be' :
-			f === 'P4' ? '#99c9ad' :
-			f === 'P5' ? '#9fc999' :
-			f === 'P6' ? '#b1c999' :
-			f === 'P7' ? '#c2c999' :
-			f === 'P8' ? '#c9be99' :
-			f === 'P9' ? '#5e727c' :
-			f === 'CU' ? '#436db4' :
-				'#a3a3a3';
+		return f === 'NCA' ? "#6baed6" :
+			f === 'aa' ? "#bcbddc" :			   
+			f === 'CA' ? "#74c476" :	
+			f === 'P1' ? "#9db7db" :
+			f === 'P2' ? "#9dd3db" :
+			f === 'P3' ? "#99c9be" :
+			f === 'P4' ? "#99c9ad" :
+			f === 'P5' ? "#9fc999" :
+			f === 'P6' ? "#b1c999" :
+			f === 'P7' ? "#c2c999" :
+			f === 'P8' ? "#c9be99" :
+			f === 'P9' ? "#5e727c" :
+			f === 'CU' ? "#436db4" :
+				"#a3a3a3";
 }
 
 function csty(feature){
