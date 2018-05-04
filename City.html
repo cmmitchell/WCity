@@ -273,13 +273,13 @@
 					
 
 						    // a line break
-						    div.innerHTML += '<br>';
+						    //div.innerHTML += '<br>';
 
 						    // second loop for text
-						    for (var i = 0; i < categories.length; i++) {
-							div.innerHTML +=
-							    '<label>' + (categories[i] ? categories[i] : '+') + '</label>';
-						    }
+					for (var i = 0; i < categories.length; i++) {
+						div.innerHTML +=
+							'<label>' + (categories[i] ? categories[i] : '+') + '</label>';
+					}
 
 					//div.innerHTML = labels.join('<br>');
 				    return div;
