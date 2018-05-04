@@ -172,8 +172,6 @@ function getC(d) {
 			   d === 'g1' ? "#252525" :
 			   d === 'g2' ? "#525252" :
 			   //others???? orange/red#9f3000
-			   d === 'g2' ? "#9f3000" :
-			   
 			   //thityir
 			   d === 'P1' ? "#9db7db" :
 			   d === 'P2' ? "#9dd3db" :
@@ -185,7 +183,6 @@ function getC(d) {
 			   d === 'P8' ? "#c9be99" :
 			   d === 'P9' ? "#5e727c" :
 			   d === 'CU' ? "#436db4" :
-
                             "#a3a3a3";
     }
 function citymi(feature) {
