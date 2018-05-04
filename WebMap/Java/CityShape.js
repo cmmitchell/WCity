@@ -190,7 +190,7 @@ function getC(d) {
     }
 function citymi(feature) {
     return {
-        fillColor: getC(feature.properties.SqMi),
+        fillColor: getColor(feature.properties.SqMi),
         weight: 2,
         opacity: 1,
         color: "#696969", weight: .7,
@@ -201,7 +201,7 @@ function citymi(feature) {
 
 function csty(feature){
 	return {
-		fillColor: getColors(feature.properties.Own),
+		fillColor: getC(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
 		color: "#696969", dashArray: '2', weight: 1, opacity: 1
 			}
