@@ -91,7 +91,7 @@ function getColorsl(d) {
     }
 function landstyle(feature){
 	return {
-		fillColor: getColorsl(feature.properties.Own),
+		fillColor: getColorsl(feature.properties.OwnShort),
 		weight: 25, fillOpacity: .8,
 		color: "#696969", dashArray: '2', weight: 1, opacity: 1
 			}
