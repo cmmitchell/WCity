@@ -247,27 +247,11 @@
 				    pal = qpal,
 				    color = ['#bcbddc', '#74c476', '#6baed6', '#436db4', '#9db7db',
 					     '#9dd3db', '#99c9be', '#99c9ad', '#9fc999', '#b1c999', 
-					     '#c2c999', '#c9be99', '#5e727c',
+					     '#c2c999', '#c9be99', '#5e727c'],
 				    labels = ['<strong>Categories</strong>'],
 				    categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6'
 						 , 'P7', 'P8', 'P9'];
 
-				    for (var i = 0; i < grades.length; i++) {
-							div.innerHTML +=
-							    '<span style="background:' + getColor(grades[i] + 1) + '"></span> ';
-						    }
-
-						    // a line break
-						    div.innerHTML += '<br>';
-
-						    // second loop for text
-						    for (var i = 0; i < grades.length; i++) {
-							div.innerHTML +=
-							    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
-						    }
-						    return div;
-						};
-				pal = qpal
 				//===============================================
 				map.on('overlayadd', function(eventLayer){
 				    if (eventLayer.name === 'Mi²'){
