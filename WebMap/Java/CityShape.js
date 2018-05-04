@@ -126,7 +126,7 @@ function gcolor(f) {
 			f === 'P8' ? "#c9be99" :
 			f === 'P9' ? "#5e727c" :
 			f === 'CU' ? "#436db4" :
-			f === 'Disputed' ? "#436db4" :
+			f === 'Disputed' ? "#a3a3a3" :
 				"#a3a3a3";
 }
 
