@@ -215,7 +215,7 @@
 				);
 				measureControl.addTo(map);
 				
-				function getColor(d) {
+				function getCol(d) {
 					    return d > 125  ? '#006739' :
 						   d > 90 ? '#238b45' :
 						   d > 50   ? '#2f9a52' :
@@ -252,7 +252,7 @@
 
 					    for (var i = 0; i < grades.length; i++) {
 							div.innerHTML +=
-							    '<span style="background:' + getColor(grades[i] + 1) + '"></span> ';
+							    '<span style="background:' + getCol(grades[i] + 1) + '"></span> ';
 						    }
 
 						    // a line break
