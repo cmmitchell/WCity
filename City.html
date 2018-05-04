@@ -159,14 +159,14 @@
 				    	bShp = L.layerGroup([b]),
 				    	cShp = L.layerGroup([c]),
 				    	dShp = L.layerGroup([d]),
-				        ccShp = L.layerGroup([c, a1]),
+				        ccShp = L.layerGroup([a1, c]),
 					bsmShp = L.layerGroup([bsm]);
 
 				//background images
 	//this is a seperating line ----------------------------------------------------------------------------------
 				//set map extent, view, and default layer
 				var map = L.map('map', {
-					layers: [a1Shp, cShp],
+					layers: [a1Shp, bShp],
 					zoomDelta: 0.15,
 					zoomSnap: 0
 					}).setView([39.007335, -76.920607], 9.5);
