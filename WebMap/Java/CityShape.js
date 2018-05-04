@@ -134,7 +134,7 @@ function csty2(feature){
 	return {
 		fillColor: gcolor(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
-		color: "#696969", dashArray: '2', weight: 1, opacity: 1
+		color: "#696969",  weight: 1, opacity: 1
 			}
 		}
 
