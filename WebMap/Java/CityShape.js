@@ -112,73 +112,26 @@ function getColor(a) {
 
 }
 
-function getColors(d) {
-	//Alliance 1:
-	//federal northern republic (Blue) #4292c6 #6baed6 #9ecae1 #c6dbef #deebf7
-        	return d === 'FRN'  ? "#08306b" :
-               	   	   d === 'b1'  ? "#08519c" :
-			   d === 'NWE'  ? "#08519c" :
-               	   	   d === 'b2' ? "#2171b5" :
-			   d === 'NER' ? "#2171b5" :
-			   
-			   d === 'NCA' ? "#6baed6" :
-		   
-		//Alliance 2 (Green)#74c476 #a1d99b
-			   d === 'C2' ? "#00441b" :
-			   d === 'C3' ? "#006d2c" :
-			   d === 'C4' ? "#238b45" :
-			   d === 'C5' ? "#41ab5d" :
-	   
-			   d === 'CA' ? "#74c476" :
-			//things  (Purple) #bcbddc #dadaeb
-			   d === 'a1' ? "#3f007d" :
-			   d === 'a2' ? "#54278f" :
-			   d === 'a3' ? "#6a51a3" :
-			   d === 'a4' ? "#807dba" :
-			   d === 'a5' ? "#9e9ac8" :
-			   
-			   d === 'aa' ? "#bcbddc" :
-			  // Rebels (Red)
-			   d === 'r1' ? "#67000d" :
-			   d === 'r2' ? "#a50f15" :
-			   d === 'r3' ? "#cb181d" :
-			   d === 'r4' ? "#ef3b2c" :
-			   d === 'r5' ? "#fb6a4a" :
-			   //d === 'r6' ? "" :
-			   //d === 'r7' ? "" :
-			  // d === 'r8' ? "" :
-			   
-			   //warlord
-			   d === 'w1' ? "#7f2704" :
-			   d === 'w2' ? "#a63603" :
-			   d === 'w3' ? "#d94801" :
-			   d === 'w4' ? "#f16913" :
-			   d === 'w5' ? "#fd8d3c" :
-			   d === 'w6' ? "#fdae6b" :
-			   d === 'w7' ? "#fdd0a2" :
-			   //gang
-			   d === 'g1' ? "#252525" :
-			   d === 'g2' ? "#525252" :
-			   //others???? orange/red#9f3000
-			   d === 'g2' ? "#9f3000" :
-			   
-			   //thityir
-			   d === 'P1' ? "#9db7db" :
-			   d === 'P2' ? "#9dd3db" :
-			   d === 'P3' ? "#99c9be" :
-			   d === 'P4' ? "#99c9ad" :
-			   d === 'P5' ? "#9fc999" :
-			   d === 'P6' ? "#b1c999" :
-			   d === 'P7' ? "#c2c999" :
-			   d === 'P8' ? "#c9be99" :
-			   d === 'P9' ? "#5e727c" :
-			   d === 'CU' ? "#436db4" :
-                            	"#a3a3a3";
-    }
+function gcolor(f) {
+		return f === 'NCA' ? '#6baed6' :
+			f === 'aa' ? '#bcbddc' :			   
+			f === 'CA' ? '#74c476' :	
+			f === 'P1' ? '#9db7db' :
+			f === 'P2' ? '#9dd3db' :
+			f === 'P3' ? '#99c9be' :
+			f === 'P4' ? '#99c9ad' :
+			f === 'P5' ? '#9fc999' :
+			f === 'P6' ? '#b1c999' :
+			f === 'P7' ? '#c2c999' :
+			f === 'P8' ? '#c9be99' :
+			f === 'P9' ? '#5e727c' :
+			f === 'CU' ? '#436db4' :
+				'#a3a3a3';
+}
 
 function csty(feature){
 	return {
-		fillColor: getColors(feature.properties.Own),
+		fillColor: gcolor(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
 		color: "#696969", dashArray: '2', weight: 1, opacity: 1
 			}
