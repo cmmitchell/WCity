@@ -1,0 +1,328 @@
+<!doctype html>
+
+<!-- Coded by C. M. Mitchell
+		-->
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>City [yd] </title>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="https://cmmitchell.github.io/Webmap2/Stylesheets/measure_tool.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cmmitchell.github.io/Webmap2/Stylesheets/css.css"/>
+		<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+		
+		<!-- Javascript and other links-->
+		<script type="text/javascript" src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/measure_tool.js"></script>
+		
+		<!-- GeoJSON overlays -->
+			
+		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Background.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Graticule_30.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Graticule_5.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/Webmap2/Java/gjson/Graticule_1.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/WCity/WebMap/Java/CityShape.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/WCity/WebMap/Java/Land.js"></script>
+		<script type="text/javascript" src="https://cmmitchell.github.io/WCity/WebMap/Java/CityShape2.js"></script>
+
+		<!-- Broken Stuff -->
+		
+
+
+		
+
+		
+		
+<!doctype html>
+
+<!-- Coded by C. M. Mitchell
+	 For some unknown reason...
+		-->
+
+		
+	</head>
+		<body>
+	
+		<!-- Fade auomation for text box/legend thing -->
+
+			
+			<script>
+				$(document).ready(function() {
+					$('.legend').delay(1000).fadeOut('normal');
+					$('.img').hover(
+						function() {
+							$('.legend').fadeIn('normal');
+						},
+						function() {
+							$('.legend').fadeOut('normal');
+						}
+					);
+				});
+				
+			</script>
+
+						<!-- Logo or somthing -->
+			</div>
+			
+
+			<div id="map"></div>
+	
+			<script>
+			
+			
+			//calling geo JASON and embeded styles from javascript
+			//============================================	
+			//=================Background=================
+			//============================================
+					
+				var a = L.geoJson(bak, {
+					style: back})
+					a1 = L.geoJson(bak, {
+					style: backblack})
+				
+					b = L.geoJson(cityS, {
+					style: CityStyle,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Mi²:</b> " + feature.properties.SqMi,popupOptions);
+					
+						}
+					})
+				
+					c = L.geoJson(cityS, {
+					style: csty,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Controlled by:</b> " + feature.properties.Own,popupOptions);
+					
+						}
+					})
+				
+					d = L.geoJson(land, {
+					style: landstyle,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Controlled by:</b> " + feature.properties.Own,popupOptions);
+					
+						}
+					})
+				
+					bsm = L.geoJson(cityS, {
+					style: citymi
+					})
+				
+
+
+				//========================================
+				//========== Grats =======================
+				//========================================
+
+				
+					k = L.geoJson(grat, {
+					style: gratst,
+					//onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					//layer.bindPopup("<b>degrees:</b> " + feature.properties.degrees,popupOptions);
+					//}
+					})
+				
+					k1 = L.geoJson(grat1, {
+					style: gratsty1,
+					//onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					//layer.bindPopup("<b>degrees:</b> " + feature.properties.degrees,popupOptions);
+					//}
+					})
+				
+					k5 = L.geoJson(grat5, {
+					style: gratsty5,
+					//onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					//layer.bindPopup("<b>degrees:</b> " + feature.properties.degrees,popupOptions);
+					//}
+					})
+					
+	//==================================================================================
+	//===============================Layer Groups=======================================
+	//==================================================================================
+				
+				//===================================================
+				//assigning variables to layers for control
+				//===================================================
+
+				var aShp = L.layerGroup([a]),
+					a1Shp = L.layerGroup([a1]),
+
+					kShp = L.layerGroup([k]),
+				    	k1Shp = L.layerGroup([k1]),
+				    	k5Shp = L.layerGroup([k5]),
+				    
+				    	bShp = L.layerGroup([b]),
+				    	cShp = L.layerGroup([c]),
+				    	dShp = L.layerGroup([d]),
+				        ccShp = L.layerGroup([a1, c]),
+					bsmShp = L.layerGroup([bsm]);
+
+				//background images
+	//this is a seperating line ----------------------------------------------------------------------------------
+				//set map extent, view, and default layer
+				var map = L.map('map', {
+					layers: [a1Shp, bShp],
+					zoomDelta: 0.15,
+					zoomSnap: 0
+					}).setView([39.007335, -76.920607], 9.5);
+					
+       				//	}).setView([7.1328, -3.6559], 9.5);	
+				//	}).setView([-0.9530146, 32.930699], 6.5);
+
+	//this is a seperating line ----------------------------------------------------------------------------------
+			
+				//Create Layered Groups
+				//create basemaps variable to call within the control
+				var baseMaps = {
+
+					"Water Background": aShp,
+					"Black Background": a1Shp,
+					"city":ccShp,
+					"Black Background": a1Shp,
+
+				};
+				
+				//create overlays variable to call within the control. Calls layer groups
+				var overLays = {
+
+					
+					// 経度緯度
+					"Graticules 30":kShp,
+					"Graticules 5":k5Shp,
+					"Graticules 1":k1Shp,
+					
+					"City":bShp,
+					"City2":cShp,
+					"Mi²":bsmShp,
+					"Land":dShp,
+					
+					
+				};
+				
+		//this is a seperating line ----------------------------------------------------------------------------------
+
+				
+				//add control to map
+				L.control.layers(baseMaps, overLays).addTo(map);
+				//Check this and associated scripts for errors. Displays tool, but not tool icon.  Error is likely in the script.
+				var measureControl = new L.Control.Measure(
+					{
+						position: 'topright',
+						primaryLengthUnit: 'meters',
+						activeColor: '#ABE67E'
+					}
+				);
+				measureControl.addTo(map);
+				
+				function getCol(d) {
+					    return d > 125  ? '#006739' :
+						   d > 90 ? '#238b45' :
+						   d > 50   ? '#2f9a52' :
+						   d > 30   ? '#41ab5d' :
+						   d > 14   ? '#67b469' :
+							   d > 0   ? '#8cbf86' :
+							      '#a1d99b';
+										  //
+										  //#c7e9c0
+					}
+				function lcol(f) {
+					return f === 'NCA' ? '#6baed6' :
+						f === 'aa' ? '#bcbddc' :			   
+						f === 'CA' ? '#74c476' :	
+						f === 'P1' ? '#9db7db' :
+						f === 'P2' ? '#9dd3db' :
+						f === 'P3' ? '#99c9be' :
+						f === 'P4' ? '#99c9ad' :
+						f === 'P5' ? '#9fc999' :
+						f === 'P6' ? '#b1c999' :
+						f === 'P7' ? '#c2c999' :
+						f === 'P8' ? '#c9be99' :
+						f === 'P9' ? '#5e727c' :
+						f === 'CU' ? '#436db4' :
+							    '#a3a3a3';
+				    }
+				//===============================================
+				var legend = L.control({position: 'bottomright'});
+				legend.onAdd = function (map) {
+					var div = L.DomUtil.create('div', 'info legend'),
+					    	labels = ['<strong>Square Miles</strong>'],
+						grades = [0, 14, 30, 50, 90, 125],
+						from, to;
+
+					    for (var i = 0; i < grades.length; i++) {
+							div.innerHTML +=
+							    '<span style="background:' + getCol(grades[i] + 1) + '"></span> ';
+						    }
+
+						    // a line break
+						    div.innerHTML += '<br>';
+
+						    // second loop for text
+						    for (var i = 0; i < grades.length; i++) {
+							div.innerHTML +=
+							    '<label>' + grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] : '+') + '</label>';
+						    }
+						    return div;
+						};
+				//===============================================
+				var legend2 = L.control({position: 'bottomright'});
+				legend2.onAdd = function (map) {
+
+				var div = L.DomUtil.create('div', 'info legend'),
+					labels = ['<strong>Categories</strong>'],
+					categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'Other'];
+					
+
+					for (var i = 0; i < categories.length; i++) {
+
+					    div.innerHTML += 
+					    labels.push(
+						'<QS style="background:' + lcol(categories[i]) + '"></QS> ' +
+					    (categories[i] ? categories[i] : '+'));
+
+					}
+					div.innerHTML = labels.join('<br>');
+				    return div;
+				    };
+			
+				
+
+				//===============================================
+				map.on('overlayadd', function(eventLayer){
+				    if (eventLayer.name === 'Mi²'){
+					map.addControl(legend);
+				    } 
+				});
+				map.on('overlayremove', function(eventLayer){
+				    if (eventLayer.name === 'Mi²'){
+					 map.removeControl(legend);
+				    } 
+				});
+				
+				map.on('overlayadd', function(eventLayer){
+				    if (eventLayer.name === 'City2'){
+					map.addControl(legend2);
+				    } 
+				});
+				map.on('overlayremove', function(eventLayer){
+				    if (eventLayer.name === 'City2'){
+					 map.removeControl(legend2);
+				    } 
+				});
+				
+				L.control.scale({maxWidth: 150}).addTo(map);
+				L.control.fullscreen().addTo(map);
+				legend2.addTo(map);
+//this is bullshit
+				
+
+			
+			
+			</script>
+			
+		</body>
