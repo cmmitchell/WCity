@@ -92,8 +92,16 @@
 						}
 					})
 				
-					c = L.geoJson(city2, {
+					c = L.geoJson(cityS, {
 					style: csty,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Controlled by:</b> " + feature.properties.Own,popupOptions);
+					
+						}
+					})
+				
+					d = L.geoJson(land, {
+					style: landstyle,
 					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
 					layer.bindPopup("<b>Controlled by:</b> " + feature.properties.Own,popupOptions);
 					
@@ -149,6 +157,7 @@
 				    
 				    	bShp = L.layerGroup([b]),
 				    	cShp = L.layerGroup([c]),
+				    	dShp = L.layerGroup([d]),
 					bsmShp = L.layerGroup([bsm]);
 
 				//background images
@@ -185,6 +194,7 @@
 					
 					"City":bShp,
 					"City2":cShp,
+					"Land":dShp,
 					"Mi²":bsmShp,
 					
 				};
