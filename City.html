@@ -244,8 +244,13 @@
 				legend2.onAdd = function (map) {
 			
 				var div = L.DomUtil.create('div', 'info legend');
+				    pal = qpal,
+				    color = ['#bcbddc', '#74c476', '#6baed6', '#436db4', '#9db7db',
+					     '#9dd3db', '#99c9be', '#99c9ad', '#9fc999', '#b1c999', 
+					     '#c2c999', '#c9be99', '#5e727c',
 				    labels = ['<strong>Categories</strong>'],
-				    categories = ['FRN', 'b1', 'b2', 'C1', 'C2', 'C3', 'C4', 'C5'];
+				    categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6'
+						 , 'P7', 'P8', 'P9'];
 
 				    for (var i = 0; i < grades.length; i++) {
 							div.innerHTML +=
@@ -262,6 +267,7 @@
 						    }
 						    return div;
 						};
+				pal = qpal
 				//===============================================
 				map.on('overlayadd', function(eventLayer){
 				    if (eventLayer.name === 'Mi²'){
