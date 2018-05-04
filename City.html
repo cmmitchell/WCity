@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [gcd] </title>
+		<title>City [gdfd] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -101,6 +101,14 @@
 						}
 					})
 				
+					c2 = L.geoJson(city2, {
+					style: csty,
+					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
+					layer.bindPopup("<b>Controlled by:</b> " + feature.properties.Own,popupOptions);
+					
+						}
+					})
+				
 					d = L.geoJson(land, {
 					style: landstyle,
 					onEachFeature: function (feature, layer){popupOptions = {color: "#5D6D7E", maxWidth: 250};
@@ -158,6 +166,7 @@
 				    
 				    	bShp = L.layerGroup([b]),
 				    	cShp = L.layerGroup([c]),
+				    	c2Shp = L.layerGroup([c2]),
 				    	dShp = L.layerGroup([d]),
 				        ccShp = L.layerGroup([a1, c]),
 					bsmShp = L.layerGroup([bsm]);
@@ -198,6 +207,8 @@
 					
 					"City":bShp,
 					"City2":cShp,
+					"City3":c2Shp,
+				
 					"Mi²":bsmShp,
 					"Land":dShp,
 					
