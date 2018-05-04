@@ -101,18 +101,6 @@ var cityS =
 ]
 }
 
-function CityStyle(feature) {
-   return {
-   fillColor: '#9a9a9a', 
-   weight: 1,
-   fillOpacity: 1,
-   color: '#747474', weight: 1.5,
-   dashArray: '3',
-   opacity: .8,
-   
-   };
-}
-
 function getColor(a) {
 	return a > 125  ? '#006739' :
 			a > 90 ? '#238b45' :
@@ -203,3 +191,14 @@ function csty(feature){
 		color: "#696969", dashArray: '2', weight: 1, opacity: 1
 			}
 		}
+function CityStyle(feature) {
+   return {
+   fillColor: '#9a9a9a', 
+   weight: 1,
+   fillOpacity: 1,
+   color: '#747474', weight: 1.5,
+   dashArray: '3',
+   opacity: .8,
+   
+   };
+}
