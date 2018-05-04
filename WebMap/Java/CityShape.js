@@ -124,7 +124,7 @@ function getColor(a) {
 
 }
 
-function getColors(d) {
+function getC(d) {
 	//Alliance 1:
 	//federal northern republic (Blue) #4292c6 #6baed6 #9ecae1 #c6dbef #deebf7
         return d === 'FRN'  ? "#08306b" :
@@ -190,7 +190,7 @@ function getColors(d) {
     }
 function citymi(feature) {
     return {
-        fillColor: getColor(feature.properties.SqMi),
+        fillColor: getC(feature.properties.SqMi),
         weight: 2,
         opacity: 1,
         color: "#696969", weight: .7,
