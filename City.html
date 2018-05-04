@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>City [GF] </title>
+		<title>City [GJJ] </title>
 
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
@@ -215,6 +215,23 @@
 										  //
 										  //#c7e9c0
 					}
+				function lcol(d) {
+					return d === 'NCA' ? "#6baed6" :
+							   d === 'aa' ? "#bcbddc" :			   
+							   d === 'CA' ? "#74c476" :	
+							   d === 'P1' ? "#9db7db" :
+							   d === 'P2' ? "#9dd3db" :
+							   d === 'P3' ? "#99c9be" :
+							   d === 'P4' ? "#99c9ad" :
+							   d === 'P5' ? "#9fc999" :
+							   d === 'P6' ? "#b1c999" :
+							   d === 'P7' ? "#c2c999" :
+							   d === 'P8' ? "#c9be99" :
+							   d === 'P9' ? "#5e727c" :
+							   d === 'CU' ? "#436db4" :
+
+							    "#a3a3a3";
+				    }
 				//===============================================
 				var legend = L.control({position: 'bottomright'});
 				legend.onAdd = function (map) {
@@ -251,9 +268,12 @@
 				    labels = ['<strong>Categories</strong>'],
 				    categories = ['aa', 'CA', 'NCA', 'CU', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6'
 						 , 'P7', 'P8', 'P9'];
-				div.innerHTML +=
-					'<span style="background:' + color + categories +'"></span> ';
-						    
+				for (var i = 0; i < categories.length; i++) {
+					div.innerHTML +=
+					    '<i style="background:' + lcol(categories[i] + 1) + '"></i> ' +
+					    categories[i] + (categories[i + 1] ? '&ndash;' + categories[i + 1] + '<br>' : '+');
+				}
+
 				return div;
 				};
 				
