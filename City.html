@@ -265,20 +265,15 @@
 					
 
 					for (var i = 0; i < categories.length; i++) {
-							div.innerHTML +=
-							    '<span style="background:' + lcol(categories[i] + 1) + '"></span> ';
-						    }
+					    div.innerHTML += 
+					    labels.push(
+						'<i style="background:' + lcol(categories[i] + 1) + '"></i> ' +
+						(categories[i] ? categories[i] : '+'));
+					}
 
-						    // a line break
-						    div.innerHTML += '<br>';
-
-						    // second loop for text
-						for (var i = 0; i < categories.length; i++) {
-							div.innerHTML +=
-							    '<label>' + (categories[i] ? categories[i] : '+') + '</label>';
-						    }
-						    return div;
-						};
+					div.innerHTML = labels.join('<br>');
+				    return div;
+				};
 			
 				
 
