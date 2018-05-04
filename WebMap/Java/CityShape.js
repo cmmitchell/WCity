@@ -115,10 +115,10 @@ function getColor(a) {
 function getColors(d) {
 	//Alliance 1:
 	//federal northern republic (Blue) #4292c6 #6baed6 #9ecae1 #c6dbef #deebf7
-        return d === 'FRN'  ? "#08306b" :
-               d === 'b1'  ? "#08519c" :
+        	return d === 'FRN'  ? "#08306b" :
+               	   	   d === 'b1'  ? "#08519c" :
 			   d === 'NWE'  ? "#08519c" :
-               d === 'b2' ? "#2171b5" :
+               	   	   d === 'b2' ? "#2171b5" :
 			   d === 'NER' ? "#2171b5" :
 			   
 			   d === 'NCA' ? "#6baed6" :
@@ -173,8 +173,7 @@ function getColors(d) {
 			   d === 'P8' ? "#c9be99" :
 			   d === 'P9' ? "#5e727c" :
 			   d === 'CU' ? "#436db4" :
-
-                            "#a3a3a3";
+                            	"#a3a3a3";
     }
 
 function csty(feature){
