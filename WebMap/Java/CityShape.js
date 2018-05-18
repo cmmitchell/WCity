@@ -132,6 +132,8 @@ function gcolor(f) {
 			f === 'P7' ? "#c2c999" :
 			f === 'P8' ? "#c9be99" :
 			f === 'P9' ? "#5e727c" :
+			f === 'P10' ? "#236f3b" :
+			f === 'P11' ? "#22155e" :
 			f === 'CU' ? "#436db4" :
 			f === 'Disputed' ? "#a3a3a3" :
 				"#a3a3a3";
@@ -140,7 +142,7 @@ function gcolor(f) {
 function csty2(feature){
 	return {
 		fillColor: gcolor(feature.properties.Own),
-		weight: 25, fillOpacity: .8,
+		weight: 25, fillOpacity: 1,
 		color: gcolor(feature.properties.Own),  weight: 1, opacity: 1
 			}
 		}
