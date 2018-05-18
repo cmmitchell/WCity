@@ -134,7 +134,7 @@ function csty2(feature){
 	return {
 		fillColor: gcolor(feature.properties.Own),
 		weight: 25, fillOpacity: .8,
-		color: "#696969",  weight: 1, opacity: 1
+		color: gcolor(feature.properties.Own),  weight: 1, opacity: 1
 			}
 		}
 
@@ -143,7 +143,7 @@ function citymi(feature) {
         fillColor: getColor(feature.properties.SqMiShort),
         weight: 2,
         opacity: 1,
-        color: "#696969", weight: .7,
+        color: getColor(feature.properties.SqMiShort), weight: .7,
         dashArray: '3',
         fillOpacity: 0.6
     };
